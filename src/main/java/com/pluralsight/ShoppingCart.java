@@ -47,9 +47,14 @@ public class ShoppingCart {
 	 this.cartItems.remove(index);
  }
  
- public void updateCart(int index, int quantity) {
-	 CartItem item = this.cartItems.get(index);
-	 item.setQuantity(quantity);
+ public void updateCartItem(int index, int quantity) {
+	 try {
+
+		 CartItem item = this.cartItems.get(index);
+		 item.setQuantity(quantity);
+	 } catch(IndexOutOfBoundsException e) {
+		 e.printStackTrace();
+	 }
  }
 
  protected void calculateOrderTotal() {
