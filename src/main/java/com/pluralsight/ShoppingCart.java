@@ -46,6 +46,11 @@ public class ShoppingCart {
  public void deleteCartItem(int index) {
 	 this.cartItems.remove(index);
  }
+ 
+ public void updateCart(int index, int quantity) {
+	 CartItem item = this.cartItems.get(index);
+	 item.setQuantity(quantity);
+ }
 
  protected void calculateOrderTotal() {
   double dblTotal = 0;
